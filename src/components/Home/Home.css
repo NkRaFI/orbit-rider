@@ -1,0 +1,23 @@
+body{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.home-container{
+    background-image: url('../../images/Bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center bottom;
+    /* width: 100vw;
+    height: 100vh; */
+}
+@media only screen and (min-width: 1093px){
+    .home-container{
+        background-image: url('../../images/Bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center bottom;
+        width: 100vw;
+        height: 100vh; 
+    }
+}
