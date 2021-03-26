@@ -11,6 +11,7 @@ import Destination from './components/Destination/Destination';
 import { createContext, useState } from 'react';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 export const VehicleTypeContext = createContext();
 export const LoggedInUserContext = createContext();
