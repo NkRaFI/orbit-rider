@@ -28,10 +28,10 @@ const Header = () => {
                     <Link className="navLink mb-3 mb-lg-0" to="/contact">Contact</Link>
                     </Nav>
                     {
-                        loggedInUser?.email && <h5 className="userName">{loggedInUser.name}</h5>
+                        loggedInUser?.name && <h5 className="userName">{loggedInUser.name}</h5>
                     }
                     {
-                        loggedInUser?.email 
+                        loggedInUser?.name || loggedInUser.email
                         ? <Button onClick={handleSignOut} variant="danger">Log out</Button>
                         : <Link to="/login"><Button variant="danger">Login</Button></Link>
                     }
