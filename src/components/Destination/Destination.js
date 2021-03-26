@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { VehicleTypeContext } from '../../App';
 import fakeData from '../../fakeData/fakeData.json';
 import Header from '../Header/Header';
+import Map from '../Map/Map';
 import VehicleDetail from '../VehicleDetail/VehicleDetail';
 import './Destination.css';
 
@@ -50,14 +51,23 @@ const Destination = () => {
             <Header></Header>
             <div className="row my-3">
                 <div className="col-12 col-lg-4 my-3">
-                    <div className="bg-light p-3 rounded">
+                    <div className="bg-color p-3 rounded">
                         {
                             infoAvailable
                             ?
                             <div>
-                                {
-                                   chosenVehicle.map(vh => <VehicleDetail vehicle={vh} key={vh.id}></VehicleDetail>) 
-                                }
+                                <div className="bg-danger text-white px-2 py-4 rounded font-weight-bold">
+                                    <ul>
+                                        <li>{destination.pickFrom.toUpperCase()}</li>
+                                        <br/>
+                                        <li>{destination.pickTo.toUpperCase()}</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    {
+                                    chosenVehicle.map(vh => <VehicleDetail vehicle={vh} destination={destination} key={vh.id}></VehicleDetail>) 
+                                    }
+                                </div>
                             </div>
                             : 
                             <form onSubmit={handleSubmit}>
@@ -73,8 +83,8 @@ const Destination = () => {
                         }
                     </div>
                 </div>
-                <div className="col-12 col-lg-8 my-3">
-                    <div className="map-container rounded"></div>
+                <div className="col-12 col-lg-8 my-3 map">
+                    <Map></Map>
                 </div>
             </div>
         </div>
